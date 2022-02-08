@@ -9,6 +9,8 @@ from app import app
 from flask import render_template, request, redirect, url_for, flash
 
 
+from datetime import datetime
+
 ###
 # Routing for your application.
 ###
@@ -30,22 +32,25 @@ def about():
     return render_template('about.html', name="Mary Jane")
 
 
+def format_date_joined(date: datetime):
+    return date.strftime("%B, %Y")
+
 @app.route('/profile/')
 def profile():
     profile = {
-           "photoURL": "assets/placeholder.gif", 
+           "photoURL": "assets/placeholder.jpg", 
            "fullName": "Joel Henry",
            "username": "joelxhenry",
            "location": "Clarendon, Jamaica",
-           "date_joined": "",
-           "bio": "",
+           "date_joined": datetime(2021, 3, 23),
+           "bio": "The avatar that's in you, and the future you aim to aspire towards",
            "post_count": 30,
            "followers_count": 519,
            "following_count": 550
         }
     profile = Data(**profile) 
-    profile.bio = "No Bio" if profile.bio == "" else profile.bio
-    return render_template('profile.html', profile=profile)
+    profile.bio = "NO BIO" if profile.bio == "" else profile.bio
+    return render_template('profile.html', profile=profile, format_date_joined=format_date_joined)
 
 ###
 # The functions below should be applicable to all Flask apps.

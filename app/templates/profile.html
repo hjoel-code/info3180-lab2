@@ -6,7 +6,7 @@
       <div class="container">
           <div class="image-container">
             <div class="image">
-                <img class="w-100" src="{{ url_for('static', filename = profile.photoURL) }}" alt="" />
+                <img class="h-100" src="{{ url_for('static', filename = profile.photoURL) }}" alt="" />
               </div>
           </div>
         
@@ -19,7 +19,7 @@
           <p>
             @{{ profile.username }} <br />
             {{ profile.location }} <br />
-            Joined {{ profile.date_joined }}
+            Joined {{ format_date_joined(profile.date_joined) }}
           </p>
         </div>
       </div>
