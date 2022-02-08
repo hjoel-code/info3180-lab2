@@ -1,0 +1,59 @@
+{% extends "base.html" %} {% block main %}
+
+<div class="profile-container">
+  <div class="content">
+    <div class="profile-header-container  d-flex justify-content-center">
+      <div class="container">
+          <div class="image-container">
+            <div class="image">
+                <img class="w-100" src="{{ url_for('static', filename = profile.photoURL) }}" alt="" />
+              </div>
+          </div>
+        
+
+        <div class="profile-name-container">
+          <h1>{{ profile.fullName }}</h1>
+        </div>
+
+        <div class="profile-detail-container">
+          <p>
+            @{{ profile.username }} <br />
+            {{ profile.location }} <br />
+            Joined {{ profile.date_joined }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="profile-body-container d-flex justify-content-center">
+        <div class="container">
+            <div class="bio-container">
+                <p class="text-muted text-center">{{ profile.bio }}</p>
+              </div>
+        
+              <div class="profile-spec-container d-flex justify-content-center">
+                <div class="stats-container">
+                  <b class="number">{{ profile.post_count }}</b>
+                  <div class="ref text-muted">Posts</div>
+                </div>
+                <div class="stats-container">
+                  <b class="number">{{ profile.following_count }}</b>
+                  <div class="ref text-muted">Following</div>
+                </div>
+                <div class="stats-container">
+                  <b class="number">{{ profile.followers_count }}</b>
+                  <div class="ref text-muted">Followers</div>
+                </div>
+              </div>
+        
+              <div class="btn-container">
+                
+              <button class="btn my-5">Follow</button>
+              </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+{% endblock %}

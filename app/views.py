@@ -13,6 +13,11 @@ from flask import render_template, request, redirect, url_for, flash
 # Routing for your application.
 ###
 
+
+class Data:
+    def __init__(self, **dict):
+        self.__dict__.update(dict)
+
 @app.route('/')
 def home():
     """Render website's home page."""
@@ -24,6 +29,23 @@ def about():
     """Render the website's about page."""
     return render_template('about.html', name="Mary Jane")
 
+
+@app.route('/profile/')
+def profile():
+    profile = {
+           "photoURL": "assets/placeholder.gif", 
+           "fullName": "Joel Henry",
+           "username": "joelxhenry",
+           "location": "Clarendon, Jamaica",
+           "date_joined": "",
+           "bio": "",
+           "post_count": 30,
+           "followers_count": 519,
+           "following_count": 550
+        }
+    profile = Data(**profile) 
+    profile.bio = "No Bio" if profile.bio == "" else profile.bio
+    return render_template('profile.html', profile=profile)
 
 ###
 # The functions below should be applicable to all Flask apps.

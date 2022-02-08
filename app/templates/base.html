@@ -20,11 +20,9 @@
     <header>
         {% include "header.html" %}
     </header>
-    <main>
-        <div class="container">
-            {% block main %}{% endblock %}
-        </div>
-    </main>
+
+    {% block main %}{% endblock %}
+    
     <footer>
         <div class="container">
             {% include "footer.html" %}

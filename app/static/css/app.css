@@ -1,3 +1,83 @@
 body {
-    padding-top: 5rem;
+  padding-top: 55px;
+}
+
+main {
+    padding-top: 10px;
+}
+
+.profile-header-container {
+  background: rgb(215, 130, 35);
+  background: linear-gradient(
+    9deg,
+    rgba(215, 130, 35, 1) 0%,
+    rgba(255, 87, 0, 1) 46%,
+    rgba(204, 47, 13, 1) 100%
+  );
+  width: 100%;
+  padding: 60px 0;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container > .image {
+  width: 190px;
+  height: 190px;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.profile-name-container > h1 {
+  text-align: center;
+  color: white;
+  font-weight: 600;
+}
+
+.profile-detail-container > p {
+  text-align: center;
+  color: whitesmoke;
+}
+
+.profile-body-container {
+  padding: 20px 60px;
+}
+
+.profile-spec-container {
+  margin: 20px 0;
+  padding: 0 50px;
+}
+
+.stats-container {
+  padding: 0 20px;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.stats-container > .number {
+  text-align: center;
+  font-size: 24px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-container > .btn {
+  background: rgb(94, 158, 19);
+  background: linear-gradient(
+    9deg,
+    rgba(94, 158, 19, 1) 0%,
+    rgba(6, 177, 0, 1) 46%,
+    rgba(35, 161, 36, 1) 100%
+  );
+  color: white;
+  padding: 10px 30px;
+  font-weight: 600;
 }
